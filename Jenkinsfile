@@ -1,17 +1,6 @@
-## Scripted pipeline
-#node {
- #   stage('scm'){
-  #      git 'https://github.com/zensoftllc/spring-petclinic.git'
-   # }
-   # stage('build'){
-   #     sh 'mvn package'
-   # }
-#}
-#}
-## Declarative pipeline
- pipeline
-     {
-         Stages{
+ pipeline{
+         agent{label 'devops'}
+         stages{
              stage('source'){
                  steps{
                      git https://github.com/zensoftllc/spring-petclinic.git'
