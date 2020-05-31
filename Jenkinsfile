@@ -1,19 +1,33 @@
  pipeline{
          agent{label 'devops'}
          stages{
-             stage('source'){
-                 steps{
+             stage('Source'){
+                 steps {
                      git 'https://github.com/zensoftllc/spring-petclinic.git'
                  }
+             }
              stage('package'){
-                 steps{
+                 steps {
                      sh 'mvn package'
                  }
              }
              }
          }
-<<<<<<< HEAD
- }
-=======
-     
->>>>>>> e6a670022eb099d373e78087b8042466e93127f6
+
+
+
+pipeline {
+    agent {label 'MASTER'}
+    stages {
+        stage('Source'){
+            steps {
+                git 'https://github.com/dummyrepos/spring-petclinic.git' 
+            }
+        }
+        stage('Package'){
+            steps {
+                sh 'mvn package'
+            }
+        }
+    }
+}
