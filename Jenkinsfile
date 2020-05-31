@@ -3,7 +3,7 @@
          stages{
              stage('source'){
                  steps{
-                     git https://github.com/zensoftllc/spring-petclinic.git'
+                     git 'https://github.com/zensoftllc/spring-petclinic.git'
                  }
              stage('package'){
                  steps{
@@ -12,4 +12,8 @@
              }
              }
          }
+<<<<<<< HEAD
  }
+=======
+     
+>>>>>>> e6a670022eb099d373e78087b8042466e93127f6
